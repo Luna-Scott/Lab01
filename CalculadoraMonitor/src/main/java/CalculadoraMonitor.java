@@ -21,6 +21,42 @@ public class CalculadoraMonitor {
             System.out.println("10. Calcular porcentaje de IVA");
             System.out.println("11. Salir");
 
-        }
+            int opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1 -> {
+                    System.out.print("Ingrese el primer número: ");
+                    double num1 = scanner.nextDouble();
+                    System.out.print("Ingrese el segundo número: ");
+                    double num2 = scanner.nextDouble();
+                    System.out.println("Resultado: " + (num1 + num2));
+                }
+                case 2 -> {
+                    System.out.print("Ingrese el primer número: ");
+                    double num1 = scanner.nextDouble();
+                    System.out.print("Ingrese el segundo número: ");
+                    double num2 = scanner.nextDouble();
+                    System.out.println("Resultado: " + (num1 - num2));
+                }
+                case 3 -> {
+                    System.out.print("Ingrese el primer número: ");
+                    double num1 = scanner.nextDouble();
+                    System.out.print("Ingrese el segundo número: ");
+                    double num2 = scanner.nextDouble();
+                    System.out.println("Resultado: " + (num1 * num2));
+                }
+                case 4 -> {
+                    System.out.print("Ingrese el primer número: ");
+                    double num1 = scanner.nextDouble();
+                    System.out.print("Ingrese el segundo número: ");
+                    double num2 = scanner.nextDouble();
+                    if (num2 != 0) {
+                        System.out.println("Resultado: " + (num1 / num2));
+                    } else {
+                        System.out.println("No se puede dividir entre cero.");
+                    }
+                }
+            }
+         }
     }
-}
+}    

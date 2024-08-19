@@ -56,7 +56,51 @@ public class CalculadoraMonitor {
                         System.out.println("No se puede dividir entre cero.");
                     }
                 }
+                case 5 -> {
+                    System.out.print("Ingrese el ángulo en grados: ");
+                    double angulo = Math.toRadians(scanner.nextDouble());
+                    System.out.println("Resultado: " + Math.sin(angulo));
+                }
+                case 6 -> {
+                    System.out.print("Ingrese el ángulo en grados: ");
+                    double angulo = Math.toRadians(scanner.nextDouble());
+                    System.out.println("Resultado: " + Math.cos(angulo));
+                }
+                case 7 -> {
+                    System.out.print("Ingrese el ángulo en grados: ");
+                    double angulo = Math.toRadians(scanner.nextDouble());
+                    System.out.println("Resultado: " + Math.tan(angulo));
+                }
+                case 8 -> {
+                    System.out.print("Ingrese el número base: ");
+                    double num1 = scanner.nextDouble();
+                    System.out.print("Ingrese el índice de la raíz: ");
+                    double indice = scanner.nextDouble();
+                    if (indice != 0) {
+                        System.out.println("Resultado: " + Math.pow(num1, 1 / indice));
+                    } else {
+                        System.out.println("El índice no puede ser cero.");
+                    }
+                }
+                case 9 -> {
+                    System.out.print("Ingrese la base: ");
+                    double num1 = scanner.nextDouble();
+                    System.out.print("Ingrese el exponente: ");
+                    double num2 = scanner.nextDouble();
+                    System.out.println("Resultado: " + Math.pow(num1, num2));
+                }
+                case 10 -> {
+                    System.out.print("Ingrese el valor base: ");
+                    double num1 = scanner.nextDouble();
+                    System.out.print("Ingrese el porcentaje de IVA: ");
+                    double iva = scanner.nextDouble();
+                    System.out.println("Resultado: " + (num1 * (iva / 100)));
+                }
+                case 11 -> continuar = false;
+                default -> System.out.println("Opción no válida.");
             }
-         }
+            System.out.println();
+        }
+        scanner.close();
     }
-}    
+}   

@@ -61,4 +61,48 @@ public CalculadoraGrafica() {
 
         add(panelBotones, BorderLayout.CENTER);
     }
+
+ @Override
+    public void actionPerformed(ActionEvent e) {
+        String comando = e.getActionCommand();
+
+        if (comando.charAt(0) >= '0' && comando.charAt(0) <= '9') {
+            display.setText(display.getText() + comando);
+        } else if (comando.equals("C")) {
+            display.setText("");
+        } else if (comando.equals("=")) {
+            num2 = Double.parseDouble(display.getText());
+            switch (operator) {
+                case '+' -> result = num1 + num2;
+                case '-' -> result = num1 - num2;
+                case '*' -> result = num1 * num2;
+                case '/' -> result = num1 / num2;
+                case '^' -> result = Math.pow(num1, num2);
+            }
+            display.setText(String.valueOf(result));
+        } else if (comando.equals("√")) {
+            double valor = Double.parseDouble(display.getText());
+            display.setText(String.valueOf(Math.sqrt(valor)));
+        } else if (comando.equals("%")) {
+            num1 = Double.parseDouble(display.getText()) / 100;
+            
+            display.setText(String.valueOf(num1));
+            
+        } else if (comando.equals("sin") || comando.equals("cos") || comando.equals("tan")) {
+            double valor = Double.parseDouble(display.getText());
+            switch (comando) {
+                case "sin" -> 
+                    display.setText(String.valueOf(Math.sin(Math.toRadians(valor))));
+                case "cos" -> 
+                    display.setText(String.valueOf(Math.cos(Math.toRadians(valor))));
+                case "tan" -> 
+                    display.setText(String.valueOf(Math.tan(Math.toRadians(valor))));
+            }
+        } else {
+            num1 = Double.parseDouble(display.getText());
+            operator = comando.charAt(0);
+            display.setText("");
+        }
+    }
+
 }
